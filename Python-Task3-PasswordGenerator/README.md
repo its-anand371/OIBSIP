@@ -43,28 +43,6 @@ Include symbols? (y/n): n
 
 Generated password: 2DGucJz7F00J
 
-Generate another password? (y/n): n
-Goodbye!
-```
-
-## How it Works (Design Notes)
-
-- `get_length()` loops until a valid integer of at least 8 is entered,
-  using `try` / `except ValueError` to catch non-numeric input.
-- `get_character_choices()` asks yes/no for each character type, then
-  checks that at least 2 were chosen before continuing.
-- `build_character_pool()` combines the chosen character sets from
-  Python's built-in `string` module (`string.ascii_uppercase`,
-  `string.ascii_lowercase`, `string.digits`, `string.punctuation`) into
-  one pool to draw from.
-- `generate_password()` uses `random.choice()` in a loop to pick random
-  characters from that pool, one at a time, until reaching the requested
-  length.
-- The whole flow repeats inside a loop in `main()`, so the user can
-  generate multiple passwords in one run.
-
-## Project Structure
-
 ```
 OIBSIP/Python-Task3-PasswordGenerator/
 ├── Password_Generator.py
